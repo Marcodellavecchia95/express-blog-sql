@@ -1,18 +1,25 @@
 {
-  "name": "express-blog-sql",
+  "name": "express-blog-intro",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "node --watch index.js"
+    "watch": "node --watch app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcodellavecchia95/express-blog-intro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marcodellavecchia95/express-blog-intro/issues"
+  },
+  "homepage": "https://github.com/Marcodellavecchia95/express-blog-intro#readme",
+  "description": "",
   "dependencies": {
+    "express": "^5.1.0",
     "mysql2": "^3.14.1"
-  },
-  "devDependencies": {}
+  }
 }
