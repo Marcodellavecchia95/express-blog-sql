@@ -1,1 +1,1 @@
-console.log("ok");
+const connection = require("./data/db");
