@@ -88,22 +88,15 @@ const modify = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  const id = parseInt(req.params.id);
-  const post = posts.find((post) => post.id === id);
-
-  if (!post) {
-    res.status(404).json({
-      error: "404, not found",
-      message: "Post non trovato",
-    });
-    return;
-  }
-
-  const postIndex = posts.indexOf(post);
-  posts.splice(postIndex, 1);
-
+  const { id } = req.params;
+  const sql = "DELETE FROM posts WHERE id = ?";
+  connection.query(sql, [id], (err) => {
+    if (err)
+      return res.status(500).json({
+        error: "Failed to delete",
+      });
+  });
   res.sendStatus(204);
-  console.log(posts);
 };
 
 module.exports = { index, show, store, update, modify, destroy };
